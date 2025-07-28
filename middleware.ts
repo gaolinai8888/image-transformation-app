@@ -1,6 +1,9 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+export default clerkMiddleware({
+  // @ts-expect-error expected
+  publicRoutes: ["/api/webhooks/clerk"],
+});
 
 export const config = {
   matcher: [
