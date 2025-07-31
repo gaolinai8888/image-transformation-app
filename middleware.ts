@@ -20,14 +20,7 @@ export default clerkMiddleware();
 
 export const config = {
   matcher: [
-    // Protect everything except these public routes:
-    /*
-      - Next.js internals (_next)
-      - Static files
-      - favicon.ico
-      - Webhook routes (Clerk + Stripe)
-      - The homepage (/)
-    */
-    "/((?!_next/static|_next/image|favicon.ico|api/webhooks/(clerk|stripe)|$).*)",
+    // Public routes: root (/), static files, and webhooks
+    "/((?!_next/static|_next/image|favicon.ico|api/webhooks/clerk|api/webhooks/stripe|$).*)",
   ],
 };
