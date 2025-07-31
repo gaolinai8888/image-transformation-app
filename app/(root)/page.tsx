@@ -5,14 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type HomeProps = {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-const Home = async ({ searchParams }: HomeProps) => {
-  const searchParams1 = await searchParams;
-  const page = Number(searchParams1?.page) || 1;
-  const searchQuery = (searchParams1?.query as string) || "";
+const Home = async ({ searchParams }: SearchParamProps) => {
+  const awaitedSearchParams = await searchParams;
+  const page = Number(awaitedSearchParams?.page) || 1;
+  const searchQuery = (awaitedSearchParams?.query as string) || "";
 
   const images = await getAllImages({ page, searchQuery });
 
