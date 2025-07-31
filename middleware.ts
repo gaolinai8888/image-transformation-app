@@ -25,8 +25,9 @@ export const config = {
       - Next.js internals (_next)
       - Static files
       - favicon.ico
-      - Your webhook route, so it's public
+      - Webhook routes (Clerk + Stripe)
+      - The homepage (/)
     */
-    "/((?!_next/static|_next/image|favicon.ico|api/webhooks/clerk).*)",
+    "/((?!_next/static|_next/image|favicon.ico|api/webhooks/(clerk|stripe)|$).*)",
   ],
 };

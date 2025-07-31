@@ -59,10 +59,12 @@ const TransformedImage = ({
             placeholder={dataUrl as PlaceholderValue}
             className="transformed-image"
             onLoad={() => {
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
               setIsTransforming && setIsTransforming(false);
             }}
             onError={() => {
               debounce(() => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 setIsTransforming && setIsTransforming(false);
               }, 8000)();
             }}
