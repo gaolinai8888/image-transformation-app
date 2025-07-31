@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 type HomeProps = {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 const Home = async ({ searchParams }: HomeProps) => {
